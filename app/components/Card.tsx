@@ -4,9 +4,10 @@ import { useState } from 'react'
 import { Slider } from '@material-tailwind/react'
 import { IconTrees } from '@tabler/icons-react'
 import { clsx } from 'clsx'
+import ReactHowler from 'react-howler'
 
 export const Card = () => {
-  const [volume, setVolume] = useState(0)
+  const [volume, setVolume] = useState(1)
 
   const handleChangeVolume = (e: any) => {
     const value = e.target.value
@@ -25,6 +26,12 @@ export const Card = () => {
         <IconTrees className='w-full h-full' />
       </div>
       <Slider defaultValue={0} value={volume} onChange={handleChangeVolume} />
+      <ReactHowler
+        src='http://goldfirestudios.com/proj/howlerjs/sound.ogg'
+        playing={true}
+        loop={true}
+        volume={volume / 100}
+      />
     </div>
   )
 }
