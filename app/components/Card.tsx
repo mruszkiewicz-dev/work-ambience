@@ -5,6 +5,7 @@ import { Slider } from '@material-tailwind/react'
 import { IconTrees } from '@tabler/icons-react'
 import { clsx } from 'clsx'
 import ReactHowler from 'react-howler'
+import { Icons } from '@/app/components/Icons'
 
 export const Card = () => {
   const [volume, setVolume] = useState(1)
@@ -23,7 +24,7 @@ export const Card = () => {
           volume <= 0 ? 'text-blue-gray-100' : 'text-blue-gray-900',
         )}
       >
-        <IconTrees className='w-full h-full' />
+        <Icons type='IconTrees' />
       </div>
       <Slider defaultValue={0} value={volume} onChange={handleChangeVolume} />
       <ReactHowler
