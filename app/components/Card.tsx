@@ -2,13 +2,13 @@
 
 import { useState } from 'react'
 import { Slider } from '@material-tailwind/react'
-import { IconTrees } from '@tabler/icons-react'
 import { clsx } from 'clsx'
 import ReactHowler from 'react-howler'
 import { Icons } from '@/app/components/Icons'
+import { IData } from '@/app/data/data'
 
-export const Card = () => {
-  const [volume, setVolume] = useState(1)
+export const Card = ({ type }: { type: string }) => {
+  const [volume, setVolume] = useState(0)
 
   const handleChangeVolume = (e: any) => {
     const value = e.target.value
@@ -24,7 +24,7 @@ export const Card = () => {
           volume <= 0 ? 'text-blue-gray-100' : 'text-blue-gray-900',
         )}
       >
-        <Icons type='IconTrees' />
+        <Icons type={type} />
       </div>
       <Slider defaultValue={0} value={volume} onChange={handleChangeVolume} />
       <ReactHowler
