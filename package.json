@@ -13,7 +13,7 @@
     "@tabler/icons": "^2.44.0",
     "@tabler/icons-react": "^2.42.0",
     "clsx": "^2.0.0",
-    "next": "14.0.3",
+    "next": "^14.0.5-canary.9",
     "react": "^18",
     "react-dom": "^18",
     "react-howler": "^5.2.0"

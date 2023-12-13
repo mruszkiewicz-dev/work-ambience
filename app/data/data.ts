@@ -16,4 +16,16 @@ export const data: IData[] = [
     id: 3,
     type: 'IconTrees',
   },
+  {
+    id: 1,
+    type: 'IconTrees',
+  },
+  {
+    id: 2,
+    type: 'IconTrees',
+  },
+  {
+    id: 3,
+    type: 'IconTrees',
+  },
 ]

@@ -5,7 +5,6 @@ import { Slider } from '@material-tailwind/react'
 import { clsx } from 'clsx'
 import ReactHowler from 'react-howler'
 import { Icons } from '@/app/components/Icons'
-import { IData } from '@/app/data/data'
 
 export const Card = ({ type }: { type: string }) => {
   const [volume, setVolume] = useState(0)
@@ -13,20 +12,25 @@ export const Card = ({ type }: { type: string }) => {
   const handleChangeVolume = (e: any) => {
     const value = e.target.value
     setVolume(value)
-    console.log(value)
   }
 
   return (
-    <div className='w-420 flex flex-col items-center p-2 mx-2  space-y-4 '>
+    <div className=' flex flex-col items-center p-2 mx-2  space-y-10 '>
       <div
         className={clsx(
-          'w-40 h-40',
+          'w-20',
           volume <= 0 ? 'text-blue-gray-100' : 'text-blue-gray-900',
         )}
       >
         <Icons type={type} />
+        <Slider
+          className='w-20 min-w-full'
+          size='sm'
+          defaultValue={0}
+          value={volume}
+          onChange={handleChangeVolume}
+        />
       </div>
-      <Slider defaultValue={0} value={volume} onChange={handleChangeVolume} />
       <ReactHowler
         src='http://goldfirestudios.com/proj/howlerjs/sound.ogg'
         playing={true}
