@@ -8,7 +8,7 @@ export default function Home() {
       <Timer />
       <div className='grid grid-cols-4 gap-10 mt-20'>
         {data.map((item) => (
-          <Card key={item.id} type={item.type} />
+          <Card key={item.id} type={item.type} src={item.src} />
         ))}
       </div>
     </main>

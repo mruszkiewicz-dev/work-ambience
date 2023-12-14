@@ -6,7 +6,7 @@ import { clsx } from 'clsx'
 import ReactHowler from 'react-howler'
 import { Icons } from '@/app/components/Icons'
 
-export const Card = ({ type }: { type: string }) => {
+export const Card = ({ type, src }: { type: string; src: string }) => {
   const [volume, setVolume] = useState(0)
 
   const handleChangeVolume = (e: any) => {
@@ -31,12 +31,7 @@ export const Card = ({ type }: { type: string }) => {
           onChange={handleChangeVolume}
         />
       </div>
-      <ReactHowler
-        src='http://goldfirestudios.com/proj/howlerjs/sound.ogg'
-        playing={true}
-        loop={true}
-        volume={volume / 100}
-      />
+      <ReactHowler src={src} playing={true} loop={true} volume={volume / 100} />
     </div>
   )
 }
