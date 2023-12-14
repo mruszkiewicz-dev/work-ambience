@@ -15,7 +15,7 @@ export const Card = ({ type, src }: { type: string; src: string }) => {
   }
 
   return (
-    <div className=' flex flex-col items-center p-2 mx-2  space-y-10 '>
+    <div className='flex flex-col items-center p-2 mx-2  space-y-10 '>
       <div
         className={clsx(
           'w-20',

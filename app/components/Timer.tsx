@@ -6,8 +6,8 @@ import { IconPlayerPlay, IconRotateClockwise2 } from '@tabler/icons-react'
 import { Modal } from './Modal'
 
 export const Timer = () => {
-  const workTime = 0.6 * 60 * 1000
-  const breakTime = 0.5 * 60 * 1000
+  const workTime = 0.2 * 60 * 1000
+  const breakTime = 30 * 60 * 1000
   const [timer, setTimer] = useState(workTime)
   const [isActive, setIsActive] = useState(false)
   const [isBreak, setIsBreak] = useState(false)
