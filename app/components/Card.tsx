@@ -28,7 +28,7 @@ export const Card = ({ type, src }: { type: string; src: string }) => {
     <div className='flex flex-col items-center p-2 mx-2 h-20 space-y-10 '>
       <div
         className={clsx(
-          'w-20',
+          'w-20 hover:text-blue-gray-900',
           volume <= 0 ? 'text-blue-gray-100' : 'text-blue-gray-900',
         )}
       >
