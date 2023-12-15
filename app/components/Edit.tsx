@@ -7,6 +7,13 @@ import { Button, Input } from '@material-tailwind/react'
 export const Edit = () => {
   const [active, setActive] = useState(false)
   const [workType, setWorkType] = useState(String)
+  const [time, setTime] = useState([{ work: 0, break: 0 }])
+
+  const handleTimeChange = (index: number, field: string, value: string) => {
+    const newTime: any = [...time]
+    newTime[index][field] = value
+    setTime(newTime)
+  }
 
   return (
     <>
@@ -33,10 +40,14 @@ export const Edit = () => {
                   type='number'
                   placeholder='Work'
                   className='bg-blue-gray-900 text-white'
+                  value={time[0].work}
+                  onChange={(e) => handleTimeChange(0, 'work', e.target.value)}
                 />
                 <input
                   placeholder='Break'
                   className='bg-blue-gray-900 text-white'
+                  value={time[0].break}
+                  onChange={(e) => handleTimeChange(0, 'work', e.target.value)}
                 />
               </div>
             )}
