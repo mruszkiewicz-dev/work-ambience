@@ -12,7 +12,7 @@ export default function Home() {
       <h1 className='m-8 text-2xl z-40'>Work Ambience</h1>
       <TimeProvider>
         <Edit />
-        {/* <Timer /> */}
+        <Timer />
       </TimeProvider>
       <div className='grid base:grid-cols-1 md:grid-cols-4 gap-10 mt-20'>
         {data.map((item) => (

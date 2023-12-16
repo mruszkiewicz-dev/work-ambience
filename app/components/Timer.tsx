@@ -6,6 +6,8 @@ import { IconPlayerPlay, IconRotateClockwise2 } from '@tabler/icons-react'
 import { Modal } from './Modal'
 import { TimeContext } from '@/app/context/TimeContext'
 
+/* PRzechodzi po tablicy i ustawia kolejne daty */
+
 export const Timer = () => {
   const workTime = 0.2 * 60 * 1000
   const breakTime = 30 * 60 * 1000
