@@ -1,14 +1,16 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { Button } from '@material-tailwind/react'
 import { IconPlayerPlay, IconRotateClockwise2 } from '@tabler/icons-react'
 import { Modal } from './Modal'
+import { TimeContext } from '@/app/context/TimeContext'
 
 export const Timer = () => {
   const workTime = 0.2 * 60 * 1000
   const breakTime = 30 * 60 * 1000
-  const [timer, setTimer] = useState(workTime)
+  const { timer, setTimer } = useContext(TimeContext)
+
   const [isActive, setIsActive] = useState(false)
   const [isBreak, setIsBreak] = useState(false)
 
@@ -22,7 +24,7 @@ export const Timer = () => {
         })
       } else {
         const interval = setInterval(() => {
-          setTimer((prev) => prev - 1000)
+          setTimer((prev: number) => prev - 1000)
         }, 1000)
 
         return () => clearInterval(interval)
@@ -38,6 +40,7 @@ export const Timer = () => {
 
   const minutes = Math.floor(timer / 60000)
   const seconds = Math.floor((timer % 60000) / 1000)
+
   return (
     <>
       {isBreak && <Modal />}
