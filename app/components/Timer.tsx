@@ -6,43 +6,63 @@ import { IconPlayerPlay, IconRotateClockwise2 } from '@tabler/icons-react'
 import { Modal } from './Modal'
 import { TimeContext } from '@/app/context/TimeContext'
 
-/* PRzechodzi po tablicy i ustawia kolejne daty */
-
 export const Timer = () => {
   const workTime = 0.2 * 60 * 1000
   const breakTime = 30 * 60 * 1000
-  const { timer, setTimer } = useContext(TimeContext)
-
+  const { timer } = useContext(TimeContext)
+  const [time, setTime] = useState(0)
   const [isActive, setIsActive] = useState(false)
   const [isBreak, setIsBreak] = useState(false)
+  const [section, setSection] = useState(0)
 
   useEffect(() => {
+    console.log()
     if (isActive) {
-      if (timer < 0) {
-        setIsBreak((prevIsBreak) => {
-          const newIsBreak = !prevIsBreak
-          setTimer(newIsBreak ? breakTime : workTime)
+      if (time < 0) {
+        console.log(section, 'interwal')
+        setIsBreak((prev) => {
+          const newIsBreak = !prev
+
+          setTime(
+            newIsBreak
+              ? timer[section].break * 60 * 1000
+              : timer[section].work * 60 * 1000,
+          )
+
+          if (newIsBreak) {
+            if (section === timer.length) {
+              console.log('zero')
+              setSection(0)
+            } else {
+              setSection((prev) => prev + 1)
+              console.log('dodaj')
+              console.log(section, 'sekcja')
+            }
+          } else {
+            console.log('zostaje')
+            setSection((prev) => prev)
+          }
+
           return newIsBreak
         })
       } else {
         const interval = setInterval(() => {
-          setTimer((prev: number) => prev - 1000)
+          setTime((prev: number) => prev - 1000)
         }, 1000)
 
         return () => clearInterval(interval)
       }
     } else {
-      setTimer(workTime)
+      setTime(timer[section].work * 60 * 1000)
     }
-  }, [isActive, timer])
+  }, [isActive, time])
 
   const startTimer = () => {
     setIsActive(!isActive)
   }
-
-  const minutes = Math.floor(timer / 60000)
-  const seconds = Math.floor((timer % 60000) / 1000)
-
+  console.log(section)
+  const minutes = Math.floor(time / 60000)
+  const seconds = Math.floor((time % 60000) / 1000)
   return (
     <>
       {isBreak && <Modal />}

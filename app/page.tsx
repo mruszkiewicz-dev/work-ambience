@@ -14,11 +14,11 @@ export default function Home() {
         <Edit />
         <Timer />
       </TimeProvider>
-      <div className='grid base:grid-cols-1 md:grid-cols-4 gap-10 mt-20'>
+     {/*  <div className='grid base:grid-cols-1 md:grid-cols-4 gap-10 mt-20'>
         {data.map((item) => (
           <Card key={item.id} type={item.type} src={item.src} />
         ))}
-      </div>
+      </div> */}
     </main>
   )
 }
