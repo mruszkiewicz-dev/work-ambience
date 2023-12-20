@@ -30,16 +30,12 @@ export const Timer = () => {
           )
 
           if (newIsBreak) {
-            if (section === timer.length) {
-              console.log('zero')
+            if (section === timer.length - 1) {
               setSection(0)
             } else {
               setSection((prev) => prev + 1)
-              console.log('dodaj')
-              console.log(section, 'sekcja')
             }
           } else {
-            console.log('zostaje')
             setSection((prev) => prev)
           }
 
