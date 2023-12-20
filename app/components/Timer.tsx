@@ -4,11 +4,10 @@ import { useState, useEffect, useContext } from 'react'
 import { Button } from '@material-tailwind/react'
 import { IconPlayerPlay, IconRotateClockwise2 } from '@tabler/icons-react'
 import { Modal } from './Modal'
+import { Steper } from './Steper'
 import { TimeContext } from '@/app/context/TimeContext'
 
 export const Timer = () => {
-  const workTime = 0.2 * 60 * 1000
-  const breakTime = 30 * 60 * 1000
   const { timer } = useContext(TimeContext)
   const [time, setTime] = useState(0)
   const [isActive, setIsActive] = useState(false)
@@ -80,6 +79,7 @@ export const Timer = () => {
           </Button>
         </div>
       </div>
+      <Steper timer={timer} />
     </>
   )
 }
