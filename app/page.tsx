@@ -9,7 +9,7 @@ import { TimeProvider } from '@/app/context/TimeContext'
 export default function Home() {
   return (
     <main className='flex min-h-screen flex-col items-center pt-4'>
-      <h1 className='m-8 text-2xl z-40'>Work Ambience</h1>
+      <h1 className='m-8 text-3xl z-40'>Work Ambience</h1>
       <TimeProvider>
         <Edit />
         <Timer />

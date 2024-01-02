@@ -1,8 +1,6 @@
 export const Steper = ({ timer }) => {
-  console.log(timer, 'sss')
-
   return (
-    <div className='w-full px-8 py-4'>
+    <div className='w-2/4 px-8 py-6'>
       <div className='relative flex items-center justify-between w-full'>
         {timer.map((item) => (
           <>
