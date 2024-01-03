@@ -6,6 +6,7 @@ import { IconPlayerPlay, IconRotateClockwise2 } from '@tabler/icons-react'
 import { Modal } from './Modal'
 import { Steper } from './Steper'
 import { TimeContext } from '@/app/context/TimeContext'
+import { TotalTime } from './TotalTime'
 
 export const Timer = () => {
   const { timer } = useContext(TimeContext)
@@ -15,10 +16,8 @@ export const Timer = () => {
   const [section, setSection] = useState(0)
 
   useEffect(() => {
-    console.log()
     if (isActive) {
       if (time < 0) {
-        console.log(section, 'interwal')
         setIsBreak((prev) => {
           const newIsBreak = !prev
 
@@ -55,9 +54,9 @@ export const Timer = () => {
   const startTimer = () => {
     setIsActive(!isActive)
   }
-  console.log(section)
   const minutes = Math.floor(time / 60000)
   const seconds = Math.floor((time % 60000) / 1000)
+  console.log(minutes, seconds)
   return (
     <>
       {/*  {isBreak && <Modal />} */}
@@ -80,6 +79,7 @@ export const Timer = () => {
         </div>
       </div>
       <Steper timer={timer} section={section} isBreak={isBreak} />
+      <TotalTime />
     </>
   )
 }

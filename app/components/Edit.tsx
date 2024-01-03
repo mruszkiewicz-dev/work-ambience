@@ -20,7 +20,7 @@ export const Edit = () => {
         <div className='bg-blue-gray-500 w-screen h-screen absolute inset-0 z-30 flex justify-center bg-opacity-70'>
           <div
             className={clsx(
-              'bg-blue-gray-700 p-10 rounded-md z-40 w-200 h-20 flex flex-col items-center justify-center text-center m-28',
+              'bg-blue-gray-700 p-10 rounded-md z-40 w-2/4 h-20 flex flex-col items-center justify-center text-center m-28',
               workType !== '' ? 'h-80' : 'h-20 ',
             )}
           >
