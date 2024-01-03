@@ -60,7 +60,7 @@ export const Timer = () => {
   const seconds = Math.floor((time % 60000) / 1000)
   return (
     <>
-      {isBreak && <Modal />}
+      {/*  {isBreak && <Modal />} */}
       <div className='flex space-x-1'>
         <div className='flex-1 shadow-2xl rounded-full bg-blue-gray-200 border-0 w-40 p-1 text-center'>
           <h2 className='font-light text-2xl'>
@@ -79,7 +79,7 @@ export const Timer = () => {
           </Button>
         </div>
       </div>
-      <Steper timer={timer} />
+      <Steper timer={timer} section={section} isBreak={isBreak} />
     </>
   )
 }
