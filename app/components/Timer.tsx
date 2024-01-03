@@ -49,7 +49,7 @@ export const Timer = () => {
     } else {
       setTime(timer[section].work * 60 * 1000)
     }
-  }, [isActive, time])
+  }, [isActive, section, time, timer])
 
   const startTimer = () => {
     setIsActive(!isActive)

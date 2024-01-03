@@ -20,8 +20,8 @@ export const Steper = ({
               className={clsx(
                 'relative z-10 grid w-40 h-10 border-2 border-blue-gray-900 font-bold text-blue-gray-900 transition-all duration-300 rounded-full text-center content-center',
                 index === section && !isBreak
-                  ? 'bg-blue-gray-400 text-white'
-                  : 'bg-blue-gray-100 ',
+                  ? 'bg-cyan-500 text-white'
+                  : 'bg-amber-100 ',
               )}
             >
               Work {item.work}
@@ -30,8 +30,8 @@ export const Steper = ({
               className={clsx(
                 'relative z-10 grid w-40 h-10 border-2 border-blue-gray-900 font-bold text-blue-gray-900 font-bold transition-all duration-300 rounded-full text-center content-center',
                 index === section - 1 && isBreak
-                  ? 'bg-teal-400 text-white'
-                  : 'bg-teal-100',
+                  ? 'bg-cyan-500 text-white'
+                  : 'bg-light-green-200',
               )}
             >
               Break {item.break}
