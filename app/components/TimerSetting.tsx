@@ -2,15 +2,27 @@
 
 import { useState } from 'react'
 import { EditButton } from './EditButton'
-import { Button, Drawer, IconButton } from '@material-tailwind/react'
+import {
+  Drawer,
+  IconButton,
+  Switch,
+  Typography,
+} from '@material-tailwind/react'
 
-export const Edit = () => {
+export const TimerSetting = () => {
   const [active, setActive] = useState(false)
 
   const closeDrawer = () => setActive(false)
 
   return (
     <>
+      <div
+        className='absolute top-10 right-20 z-40 p-2 hover:text-blue-gray-500 m-0'
+        onClick={() => setActive(!active)}
+      >
+        <EditButton />
+      </div>
+
       <Drawer
         placement='right'
         open={active}
@@ -37,16 +49,38 @@ export const Edit = () => {
           </IconButton>
         </div>
         <div className='pl-2 flex flex-col items-center justify-center space-y-2'>
-          <div></div>
+          <div>
+            <Switch
+              crossOrigin={undefined}
+              label={
+                <div>
+                  <Typography color='blue-gray' className='font-medium'>
+                    Schemat
+                  </Typography>
+                </div>
+              }
+              containerProps={{
+                className: '-ml-5',
+              }}
+            />
+          </div>
+          <div>
+            <Switch
+              crossOrigin={undefined}
+              label={
+                <div>
+                  <Typography color='blue-gray' className='font-medium'>
+                    Schemat
+                  </Typography>
+                </div>
+              }
+              containerProps={{
+                className: '-ml-5',
+              }}
+            />
+          </div>
         </div>
       </Drawer>
-
-      <div
-        className='absolute top-10 right-20 z-40 p-2 hover:text-blue-gray-500 m-0'
-        onClick={() => setActive(!active)}
-      >
-        <EditButton />
-      </div>
     </>
   )
 }
