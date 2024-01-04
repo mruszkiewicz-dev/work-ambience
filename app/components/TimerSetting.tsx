@@ -17,7 +17,7 @@ export const TimerSetting = () => {
   return (
     <>
       <div
-        className='absolute top-10 right-20 z-40 p-2 hover:text-blue-gray-500 m-0'
+        className='hover:text-blue-gray-500 m-0'
         onClick={() => setActive(!active)}
       >
         <EditButton />
@@ -74,9 +74,6 @@ export const TimerSetting = () => {
                   </Typography>
                 </div>
               }
-              containerProps={{
-                className: '-ml-5',
-              }}
             />
           </div>
         </div>
