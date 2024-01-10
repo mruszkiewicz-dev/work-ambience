@@ -29,13 +29,14 @@ export const Steper = ({
             <div
               className={clsx(
                 'relative z-10 grid w-40 h-10 border-2 border-blue-gray-900 font-bold text-blue-gray-900 font-bold transition-all duration-300 rounded-full text-center content-center',
-                index === section - 1 && isBreak
+                index === (section === 0 ? timer.length -1 : section - 1) &&
+                  isBreak
                   ? 'bg-cyan-500 text-white'
                   : 'bg-light-green-200',
               )}
             >
               Break {item.break}
-              {console.log(index, section, isBreak)}
+              {console.log(timer.length, index)}
             </div>
           </>
         ))}

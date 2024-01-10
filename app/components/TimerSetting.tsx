@@ -1,13 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { EditButton } from './EditButton'
 import {
   Drawer,
   IconButton,
   Switch,
   Typography,
 } from '@material-tailwind/react'
+import { IconSettings } from '@tabler/icons-react'
 
 export const TimerSetting = () => {
   const [active, setActive] = useState(false)
@@ -16,12 +16,12 @@ export const TimerSetting = () => {
 
   return (
     <>
-      <div
-        className='hover:text-blue-gray-500 m-0'
+      <button
+        className='hover:text-blue-gray-500 m-0 p-0 h-8 w-auto'
         onClick={() => setActive(!active)}
       >
-        <EditButton />
-      </div>
+        <IconSettings className='w-full h-full' />
+      </button>
 
       <Drawer
         placement='right'

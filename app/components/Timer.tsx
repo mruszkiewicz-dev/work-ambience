@@ -3,7 +3,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { Button } from '@material-tailwind/react'
 import { IconPlayerPlay, IconRotateClockwise2 } from '@tabler/icons-react'
-import { Modal } from './Modal'
 import { Steper } from './Steper'
 import { TimeContext } from '@/app/context/TimeContext'
 import { TotalTime } from './TotalTime'
@@ -17,15 +16,9 @@ export const Timer = () => {
 
   useEffect(() => {
     if (isActive) {
-      if (time < 0) {
+      if (time <= 0) {
         setIsBreak((prev) => {
           const newIsBreak = !prev
-
-          setTime(
-            newIsBreak
-              ? timer[section].break * 60 * 1000
-              : timer[section].work * 60 * 1000,
-          )
 
           if (newIsBreak) {
             if (section === timer.length - 1) {
@@ -37,6 +30,11 @@ export const Timer = () => {
             setSection((prev) => prev)
           }
 
+          setTime(
+            newIsBreak
+              ? timer[section].break * 60 * 1000
+              : timer[section].work * 60 * 1000,
+          )
           return newIsBreak
         })
       } else {
@@ -56,10 +54,8 @@ export const Timer = () => {
   }
   const minutes = Math.floor(time / 60000)
   const seconds = Math.floor((time % 60000) / 1000)
-  console.log(minutes, seconds)
   return (
     <>
-      {/*  {isBreak && <Modal />} */}
       <div className='flex space-x-1'>
         <div className='flex-1 shadow-2xl rounded-full bg-blue-gray-200 border-0 w-40 p-1 text-center'>
           <h2 className='font-light text-2xl'>
@@ -79,7 +75,6 @@ export const Timer = () => {
         </div>
       </div>
       <Steper timer={timer} section={section} isBreak={isBreak} />
-      <TotalTime />
     </>
   )
 }

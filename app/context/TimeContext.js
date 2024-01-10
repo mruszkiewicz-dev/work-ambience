@@ -5,7 +5,7 @@ const TimeContext = createContext()
 const TimeProvider = ({ children }) => {
   const [timer, setTimer] = useState([
     { work: 0.2, break: 0.1 },
-    { work: 0.2, break: 0.1 },
+    { work: 0.4, break: 0.3 },
   ])
   return (
     <TimeContext.Provider value={{ timer, setTimer }}>

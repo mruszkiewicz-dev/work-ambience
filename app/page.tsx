@@ -23,10 +23,8 @@ export default function Home() {
             <TimerSetting />
           </div>
         </nav>
-
         <main className='flex min-h-screen flex-col items-center pt-4'>
           <Timer />
-
           <div className='grid base:grid-cols-1 md:grid-cols-4 gap-10 mt-20'>
             {data.map((item) => (
               <Card key={item.id} type={item.type} src={item.src} />
